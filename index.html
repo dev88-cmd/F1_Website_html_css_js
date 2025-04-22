@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<head>
+    <title>F1 - WEBSITE PROJECT</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="img/m_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
+<style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        #tooltip .icon {
+            margin: 0 10px;
+            color: #334;
+            background-color: #ddd;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .icon {
+            width: 5px;
+            height: 50px;
+            background-color: blue;
+            transition: transform .2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+        .icon {
+            margin: 10px;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width: 40px;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            transition: transform .2s;
+        }
+
+        .logo:hover {
+              transform: scale(0.8);
+        }
+        nav {
+                background-color: #222;
+                margin-right: 40px;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                font-weight: bold;
+                text-decoration: none;
+                color: #ccc;
+                transition: color 30s;
+                
+                position: relative;
+            }
+
+            nav ul li a:before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #fff;
+                visibility: hidden;
+                transition: all 0.3s;
+            }
+
+            nav ul li a:hover {
+                color: #fff;
+                border-bottom-color: #d35050;
+            }
+    
+            nav ul li a:hover:before {
+                visibility: visible;
+                width: 100%;
+            }
+
+            nav ul li a.active {
+                color: #fff;
+                border-bottom-color: #fff;
+            }
+        .nav {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .nav:hover {
+            transform: translateY(-3px);
+        }
+        .header {
+            background-image: url('image/photo10.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 95vh; 
+            width: 1110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .header__text {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            transition: transform .2s;
+        }
+        .header__text:hover {
+              transform: scale(0.8);
+        }    
+        .header__text--colorized {
+            color: #f55;
+            font-weight: bold;
+        }
+        .header__cta {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            background-color: #f55;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            transition: transform .2s;
+        }
+        .header__cta:hover {
+              transform: scale(1.2);
+        }
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section__heading {
+            font-size: 2rem;
+            color: #f55;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section__heading:hover {
+            transform: scale(1.2);
+        }
+        .about-us__textbox {
+            max-width: 600px;
+            margin: 0 auto;
+        }    
+        .about-us__text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #333;
+            transition: transform .2s;
+        }
+        .about-us__test:hover {
+              transform: scale(1.2);
+        }
+        .about-us__link {
+            color: #f55;
+            text-decoration: underline;
+            transition: transform .2s;
+        }
+        .about-us__link:hover {
+              transform: scale(1.2);
+        }
+        .about-us__box {
+            display: flex;
+       
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 2rem;
+            transition: transform .2s;
+        }
+        .about-us__box:hover {
+              transform: scale(1.2);
+        }
+        .about-us__img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            width:100%;
+            text-align: center;
+            padding: 2rem;
+        }
+        .footer__text {
+            font-size: 1rem;
+            color: #fff;
+        }
+        .footer__link {
+            color: #f55;
+            text-decoration: underline;
+        }
+        .section__heading, .about-us__text, .about-us__img {
+            transition: transform 0.3s ease;
+        }
+
+       .section__heading:hover, .about-us__text:hover, .about-us__img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+<div id="cookie-popup" class="cookie-popup">
+        <div class="cookie-popup-content">
+            <h2>YOUR CHOICES REGARDING COOKIES ON THIS SITE</h2>
+            <p>We and our 465 partners use cookies and other similar technologies for a number of reasons. In particular, by using cookies to process personal data such as IP addresses, unique IDs, and browsing data, we are able to improve search results, communication and app performance, and show more relevant content and promotional materials. Depending on your choices in relation to the cookies, we may also include personalising content or advertising in our app.
+            </p>
+            <button id="accept-cookies">Accept</button>
+            <button id="reject-cookies">Reject</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+    <div class="navbar">
+        <a href="image/film1.mp4" class="logo"><img src="image/logof1.png" alt="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="login.html" class="nav__item">Login</a></li>
+                <li><a href="index.html" class="nav__item">Home page</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits#History" class="nav__item">History</a></li>
+                <li><a href="teams.html" class="nav__item">Teams</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits" class="nav__item">Tracks</a></li>
+             </ul>
+        </nav>
+    </div>
+
+    <div class="header">
+        <div class="header__title">
+            <p class="header__text">Adapt to<span
+                    class="header__text--colorized">
+                   the best</span>
+            </p>
+            <a href="https://www.formula1.com/" class="header__cta">F1</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="section about-us">
+            <h2 class="section__heading">Formula 1</h2>
+            <div class="about-us__textbox">
+                <p class="about-us__text">Formula 1 is the highest class of motor racing in the world. Organizes an international series of races on round circuits on different continents. The most talented drivers compete against the biggest car manufacturers in this competition. Formula 1 is famous With exhilarating speeds, advanced technology and dynamic on-track competition, attracting millions of fans from all over the world.</p>
+ 
+            </div>
+    
+            <div class="about-us__box">
+                <img src="image/photo6.jpg" alt="ciąg bolidów"
+                    class="about-us__img about-us__img--desktop">
+                <img src="image/photo11.jpg" alt="bolid z 2022 merc"
+                    class="about-us__img">
+                <img src="image/photo12.jpg" alt="f1" class="about-us__img">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__icons">
+            <a href="https://www.facebook.com/Formula1/" class="footer__icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/f1/" class="footer__icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/F1?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="footer__icon"><i class="fab fa-twitter"></i></a>
+        <p class="footer__text">All rights reserved &copy; 2024 F1 Website | <a href="priv.html" class="footer__link">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
